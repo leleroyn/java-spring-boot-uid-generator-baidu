@@ -10,12 +10,17 @@ public class UidController {
     @Autowired
     private UidGenService uidGenService;
 
-    @GetMapping("/uidGenerator")
-    public String UidGenerator() {
+    @GetMapping("/getUid")
+    public String getUid() {
         return String.valueOf(uidGenService.getUid());
     }
 
+    @GetMapping("/getCachedUid")
+    public String getCachedUid() {
+        return String.valueOf(uidGenService.getCachedUid());
+    }
     @GetMapping("/")
+
     public String index() {
         return "index";
     }
